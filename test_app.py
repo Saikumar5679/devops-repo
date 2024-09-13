@@ -44,4 +44,4 @@ def test_convert_temp_k_to_f(client, temp, expected):
 def test_convert_temp_invalid_scale(client):
     response = client.get('/convert-temp?temp=100&scale=unknown&target_scale=celsius')
     assert response.status_code == 400
-    assert 'error' in response.jso
+    assert 'error' in response.json
